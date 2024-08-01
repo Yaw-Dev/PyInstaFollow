@@ -12,6 +12,8 @@ I know how these tools tend to be and how sketchy they always seem. For this rea
 
 All you have to do now is run "Get Followers" and "Get Followees" at least once. After that you can run "Compare" and get a list of everyone not following you back. Simple as that!
 
+**Warning: Using any of the features that require API calls may result in rate-limits or Instagram flagging it as suspicious behavior!**
+
 ## Todo
 - add an option for unfollowing everyone that doesn't follow you back
 - beautify the cli
