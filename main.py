@@ -1,9 +1,11 @@
 import instabot as pyinstafollow
 import instaloader
+import shutil
 import time
 import json
 import os
 
+os.system("title PyInstaFollow")
 print("[+] Welcome to PyInstaFollow!")
 
 with open("config.json", "r", encoding="utf-8") as file:
@@ -30,11 +32,21 @@ def read_usernames_from_csv(filename):
     with open(filename, 'r', encoding="utf-8") as file:
         return set(line.strip() for line in file)
     
+def backup_cvs_files(mode):
+    if not os.path.exists("backup\\"):
+        os.mkdir("backup")
+
+    if os.path.exists(f"output\\{mode}.csv"):
+        try:    
+            shutil.copy(f"output\\{mode}.csv", "backup")
+            print(f"[+] {mode}.csv has been backed up.")
+        except: print("[!] Something went wrong!")
+    
 if login_on_start:
     login()
 
 while True:
-    print("\nSelect an option:\n[1] Get Followers\n[2] Get Followees\n[3] Compare\n")
+    print("\nSelect an option:\n[1] Get Followers\n[2] Get Followees\n[3] Compare\n[4] Backup\n")
     user_choice = input(">> ")
     match user_choice:
         
@@ -60,7 +72,11 @@ while True:
                 for username in non_followers:
                     print(username)
             else: print("[!] Error: Files are missing...\nPlease run options [1] and [2] before comparing.")
-        
+
+        case '4':
+            backup_cvs_files("followers")
+            backup_cvs_files("followees")
+
         case _: print("[!] Invalid option. Please try again.")
         
     print("\n[+] Press Enter to continue..."); os.system("pause > nul"); os.system("cls")

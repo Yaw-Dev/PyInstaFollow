@@ -20,7 +20,6 @@ All you have to do now is run "Get Followers" and "Get Followees" at least once.
 
 ## Todo
 - add an option for unfollowing everyone that doesn't follow you back
-- add option to backup followers.csv & followees.csv files for future use
 - write the output of "Compare" to a file
 - beautify the cli
 - make code less shitty
