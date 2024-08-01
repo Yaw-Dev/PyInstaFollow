@@ -12,7 +12,7 @@ I know how these tools tend to be and how sketchy they always seem. For this rea
 
 All you have to do now is run "Get Followers" and "Get Followees" at least once. After that you can run "Compare" and get a list of everyone not following you back. Simple as that!
 
-> You can now set whether you want the login to happen on program start (every time) or only when using [1] or [2]. This will help lower API calls (login) which may have been useless of the user only wanted to run "Compare". 
+> You can now set whether you want the login to happen on program start (every time) or only when using [1] or [2]. This will help lower API calls (login) which may have been useless if the user only wanted to run "Compare". 
 
 - You can do this by changing the `login-on-start` value on `config.json`
 
