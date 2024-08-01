@@ -1,4 +1,5 @@
 {
     "username": "username here",
-    "password": "password here"
+    "password": "password here",
+    "login-on-start": false
 }
