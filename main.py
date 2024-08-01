@@ -13,13 +13,15 @@ with open("config.json", "r", encoding="utf-8") as file:
     login_on_start = login_data["login-on-start"]
 
 L = instaloader.Instaloader()
-is_logged_in = False
+global is_logged_in; is_logged_in = False
 
 def login():
+    global is_logged_in
     try:
         print("\n[+] Logging in...")
         L.login(username, password)
         print("[+] Logged in!")
+        is_logged_in = True
     except Exception as e: 
         print("[!] Login failed:\n" + str(e))
         print("\n[+] Press Enter to continue..."); os.system("pause > nul"); os.system("cls")
@@ -30,7 +32,6 @@ def read_usernames_from_csv(filename):
     
 if login_on_start:
     login()
-    is_logged_in = True
 
 while True:
     print("\nSelect an option:\n[1] Get Followers\n[2] Get Followees\n[3] Compare\n")
