@@ -12,29 +12,25 @@ def follow_handler(mode, L):
     try:
         profile = instaloader.Profile.from_username(L.context, username_to_scrape)
         if mode == "followers":
-            to_print = "Getting followers from: "
-            filename = 'output\\followers.csv'
             follow_count = profile.followers
             follow_generator = profile.get_followers()
         else: 
-            to_print = "Getting followees from: "
-            filename = 'output\\followees.csv'
             follow_count = profile.followees
             follow_generator = profile.get_followees()
 
-        print(to_print + username_to_scrape)
-        with open(filename,'w',newline='',encoding="utf-8") as csvf:
+        print(f'Getting {mode} from {username_to_scrape}')
+        with open(f'output\\{mode}.csv','w',newline='',encoding="utf-8") as csvf:
             csv_writer = csv.writer(csvf)
         total=0
         for person in follow_generator:
             try:
                 total+=1
                 username = person.username
-                with open(filename,'a', newline='', encoding='utf-8') as csvf:
+                with open(f'output\\{mode}.csv','a', newline='', encoding='utf-8') as csvf:
                     csv_writer = csv.writer(csvf)
                     csv_writer.writerow([username])
                 print(f'{username} ({total}/{follow_count})')
             except Exception as e: print(e)
         
-        print("File written: Check 'output' folder.")
+        print(f'\nAll {mode} have been written to file: output\\{mode}.csv')
     except Exception as e: print(e)
