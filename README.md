@@ -1,4 +1,9 @@
 # Introduction
+
+### ⚠ 3/2/2025 update: This seems to have stopped working; might come back to it at some point.
+
+---
+
 **PyInstaFollow** is the simplest tool for finding out who is not following you back.
 
 I know how these tools tend to be and how sketchy they always seem. For this reason I decided to create **PyInstaFollow** and publish it as an open source project.
