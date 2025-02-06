@@ -1,6 +1,7 @@
 # Introduction
 
 ### ⚠ 3/2/2025 update: This seems to have stopped working; might come back to it at some point.
+### ➡️ Follow up: There seems to be a widely reported issue with the `get_followers()` and `get_followees()` functions in the `instaloader` library. Hopefully it will be fixed soon.
 
 ---
 
